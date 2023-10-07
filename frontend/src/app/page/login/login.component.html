@@ -1,0 +1,38 @@
+<div class="page-login">
+  <div class="ui centered grid container">
+    <div class="nine wide column">
+      <div class="ui fluid card">
+        <div class="content">
+          <form
+            class="ui form"
+            #myForm="ngForm"
+            (ngSubmit)="onSubmit(myForm.value)"
+          >
+            <div class="field">
+              <label>Username</label>
+              <input
+                type="text"
+                name="username"
+                placeholder="UserName"
+                [(ngModel)]="authLogin.username"
+              />
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                [(ngModel)]="authLogin.password"
+              />
+            </div>
+            <button class="ui primary labeled icon button" type="submit">
+              <i class="unlock alternate icon"></i>
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
