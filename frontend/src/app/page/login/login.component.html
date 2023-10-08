@@ -5,32 +5,56 @@
         <div class="content">
           <form
             class="ui form"
-            #myForm="ngForm"
-            (ngSubmit)="onSubmit(myForm.value)"
+            [formGroup]="formAuthLogin"
+            (ngSubmit)="onSubmit()"
           >
             <div class="field">
               <label>Username</label>
               <input
                 type="text"
-                name="username"
+                formControlName="username"
                 placeholder="UserName"
-                [(ngModel)]="authLogin.username"
               />
+              <div
+                *ngIf="submittedForm && f['username'].errors"
+                class="ui pointing red basic label"
+              >
+                The username field is empty
+              </div>
             </div>
             <div class="field">
               <label>Password</label>
               <input
                 type="password"
-                name="password"
+                formControlName="password"
                 placeholder="Password"
-                [(ngModel)]="authLogin.password"
               />
+              <div
+                *ngIf="submittedForm && f['password'].errors"
+                class="ui pointing red basic label"
+              >
+                The password field is empty
+              </div>
             </div>
-            <button class="ui primary labeled icon button" type="submit">
+            <button
+              class="ui primary labeled icon button"
+              [class.loading]="loadingForm"
+              type="submit"
+            >
               <i class="unlock alternate icon"></i>
               Login
             </button>
           </form>
+          <div
+            *ngIf="dataResponse.error"
+            class="ui icon warning message"
+          >
+            <i class="lock icon"></i>
+            <div class="content">
+              <div class="header">Login failed!</div>
+              <p>You might have misspelled your username or password!</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
