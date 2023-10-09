@@ -23,7 +23,7 @@ export class ModalComponent {
   loadingForm = false;
   dataResponse = {
     error: false,
-    data: undefined,
+    data: '',
   };
 
   constructor(private formBuilder: FormBuilder) {}

@@ -43,7 +43,7 @@ export class ItemComponent implements OnInit {
 
   onClose = () => {
     this.modalOpen = false;
-    getItems().then((e) => (this.response = e?.data));
+    this.loadData();
   };
 
   actions = [

@@ -4,7 +4,7 @@
   [class.primary]="primary"
   [class.red]="red"
   [class.yellow]="yellow"
-  (click)="onClick()"
+  (click)="$event.stopPropagation(); clickEmit.emit(onABC)"
 >
   <i *ngIf="icon" class="icon {{ icon }}"></i>
   {{ content }}
