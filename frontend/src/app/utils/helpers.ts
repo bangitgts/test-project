@@ -9,4 +9,6 @@ interface AuthResponse {
 const setLocalStorageLogin = (data: AuthResponse) =>
   localStorage.setItem('auth-login', JSON.stringify(data));
 
-export { setLocalStorageLogin, AuthResponse };
+const getLocalStorageLogin = () => localStorage.getItem('auth-login');
+
+export { setLocalStorageLogin, getLocalStorageLogin, AuthResponse };

@@ -1,0 +1,10 @@
+<button
+  class="ui button"
+  [class.icon]="icon"
+  [class.primary]="primary"
+  [class.red]="red"
+  [class.yellow]="yellow"
+>
+  <i *ngIf="icon" class="icon {{ icon }}"></i>
+  {{ content }}
+</button>

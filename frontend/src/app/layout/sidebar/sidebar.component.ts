@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Actions, Columns } from 'src/app/utils/global.model';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './sidebar.component.html',
-  //styleUrls: ['./app.component.scss'],
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SideBarComponent {
-  title = 'frontend';
+  collapsed = true;
+  @Input() title?: string;
+  @Input() columns?: Array<Columns>;
+  @Input() actions?: Array<Actions>;
+  
+  constructor(private router: Router) {}
+  onCollapsed(): void {
+    this.collapsed = !this.collapsed;
+  }
+  componentNow = this.router?.config[0]?.component;
 }

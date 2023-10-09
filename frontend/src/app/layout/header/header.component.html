@@ -1,0 +1,20 @@
+<span style="display: flex; justify-content: space-between; padding: 10px">
+  <h2 id="left">{{ title }}</h2>
+  <div id="right">
+    <!-- <app-button [label]='content'></app-button> -->
+    <span *ngFor="let action of actions">
+      <app-button
+        *ngIf="action.globalAction"
+        [content]="action.content"
+        [icon]="action.icon"
+        [primary]="action.primary"
+        [red]="action.red"
+        [yellow]="action.yellow"
+      ></app-button>
+    </span>
+  </div>
+</span>
+
+<!-- <div>
+  <data-table [columns]="columns"></data-table>
+</div> -->
