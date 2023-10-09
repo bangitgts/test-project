@@ -1,28 +1,34 @@
-<table class="ui five column table">
-  <thead>
-    <tr>
-      <th *ngFor="let column of columns">{{ column.header }}</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>John</td>
-      <td>Approved</td>
-      <td>22</td>
-      <td>Male</td>
-      <td>
-        <span *ngFor="let action of actions">
-          <app-button
-            *ngIf="!action.globalAction"
-            [content]="action.content"
-            [icon]="action.icon"
-            [primary]="action.primary"
-            [red]="action.red"
-            [yellow]="action.yellow"
-          ></app-button>
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="ui basic segment">
+  <div *ngIf="loading" class="ui active loader"></div>
+  <table class="ui column table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns">{{ column.header }}</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let value of data">
+        <!-- <td *ngFor="let column of columns">{{value?.name`}}</td> -->
+        <td>{{ value.name }}</td>
+        <td>{{ value.type }}</td>
+        <td>{{ value.category }}</td>
+        <td>{{ value.price }}</td>
+        <td>
+          <span *ngFor="let action of actions">
+            <app-button
+              *ngIf="!action.globalAction"
+              [content]="action.content"
+              [icon]="action.icon"
+              [primary]="action.primary"
+              [red]="action.red"
+              [yellow]="action.yellow"
+              [onClick]="action.onClick(1)"
+            ></app-button>
+          </span>
+        </td>
+      </tr>
+      <tr></tr>
+    </tbody>
+  </table>
+</div>

@@ -12,6 +12,8 @@ export class SideBarComponent {
   @Input() title?: string;
   @Input() columns?: Array<Columns>;
   @Input() actions?: Array<Actions>;
+  @Input() data?: Array<any>;
+  @Input() loading?: boolean;
   
   constructor(private router: Router) {}
   onCollapsed(): void {

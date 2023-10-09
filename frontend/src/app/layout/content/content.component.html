@@ -2,5 +2,10 @@
   <app-header [title]="title" [actions]="actions"></app-header>
 </div>
 <div>
-  <data-table [columns]="columns" [actions]="actions"></data-table>
+  <data-table
+    [columns]="columns"
+    [actions]="actions"
+    [data]="data"
+    [loading]="loading"
+  ></data-table>
 </div>

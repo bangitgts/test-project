@@ -10,6 +10,7 @@ import { DataTableComponent } from './shared/data-table/data-table.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { ContentComponent } from './layout/content/content.component';
 import { ItemComponent } from './page/item/item.component';
+import { ModalComponent } from './page/item/modal/modal-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ItemComponent } from './page/item/item.component';
     DataTableComponent,
     ButtonComponent,
     ContentComponent,
-    ItemComponent
+    ItemComponent,
+    ModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],

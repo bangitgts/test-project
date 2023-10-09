@@ -1,2 +1,4 @@
-<app-side-bar [title]="title" [columns]="columns" [actions]="actions">
+<app-side-bar [title]="title" [columns]="columns" [actions]="actions" [data]="response.data" 
+[loading]="loading">
 </app-side-bar>
+<app-modal-form *ngIf="modalOpen" [onClose]="onClose"> </app-modal-form>

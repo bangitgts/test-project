@@ -10,10 +10,10 @@ interface Actions {
   globalAction?: boolean;
   icon?: string;
   content?: string;
-  onClick?: void;
   primary?: boolean;
   red?: boolean;
   yellow?: boolean;
+  onClick?: any;
 }
 
 export { Columns, Actions };

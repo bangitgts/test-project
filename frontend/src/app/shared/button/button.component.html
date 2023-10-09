@@ -4,6 +4,7 @@
   [class.primary]="primary"
   [class.red]="red"
   [class.yellow]="yellow"
+  (click)="onClick()"
 >
   <i *ngIf="icon" class="icon {{ icon }}"></i>
   {{ content }}

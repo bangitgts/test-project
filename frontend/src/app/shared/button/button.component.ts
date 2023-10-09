@@ -11,9 +11,9 @@ export class ButtonComponent {
   @Input() type?: TypeButton;
   @Input() loading?: boolean;
   @Input() icon?: string;
-  
+
   @Input() primary?: boolean;
   @Input() red?: boolean;
   @Input() yellow?: boolean;
-
+  @Input() onClick?: any;
 }

@@ -1,0 +1,85 @@
+<div
+  class="ui dimmer modals page transition visible active"
+  style="display: flex !important"
+>
+  <div
+    class="ui standard test modal transition visible active"
+    style="display: block !important; margin-top: -356px"
+  >
+    <div class="header">Add Item</div>
+    <div *ngIf="dataResponse.error" style="padding: 20px">
+      <div class="ui error message">
+        <!-- <i class="close icon"></i> -->
+        <div class="content">
+          <div class="header">Failed!</div>
+          <p>{{ dataResponse?.data }}</p>
+        </div>
+      </div>
+    </div>
+    <form
+      style="padding: 10px"
+      class="ui form"
+      [class.loading]="loadingForm"
+      [formGroup]="formItem"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="field" style="margin-left: 10px">
+        <label>Item Name</label>
+        <input type="text" formControlName="name" placeholder="Name Item" />
+        <div
+          *ngIf="submittedForm && f['name'].errors"
+          class="ui pointing red basic label"
+        >
+          The Item Name field is empty
+        </div>
+      </div>
+
+      <div class="field" style="margin-left: 10px">
+        <label>Type Name</label>
+        <input type="text" formControlName="type" placeholder="Type Name" />
+        <div
+          *ngIf="submittedForm && f['type'].errors"
+          class="ui pointing red basic label"
+        >
+          The Type Name field is empty
+        </div>
+      </div>
+
+      <div class="field" style="margin-left: 10px">
+        <label>Category Name</label>
+        <input
+          type="text"
+          formControlName="category"
+          placeholder="Category Name"
+        />
+        <div
+          *ngIf="submittedForm && f['category'].errors"
+          class="ui pointing red basic label"
+        >
+          The Category Name field is empty
+        </div>
+      </div>
+
+      <div class="field" style="margin-left: 10px">
+        <label>Price</label>
+        <input type="number" formControlName="price" placeholder="Price" />
+        <div
+          *ngIf="submittedForm && f['price'].errors"
+          class="ui pointing red basic label"
+        >
+          The Price field is empty
+        </div>
+      </div>
+      <div class="actions">
+        <div (click)="onClose()" class="ui red right labeled icon button">
+          Close
+          <i class="close icon"></i>
+        </div>
+        <button type="submit" class="ui positive right labeled icon button">
+          Acpect
+          <i class="checkmark icon"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

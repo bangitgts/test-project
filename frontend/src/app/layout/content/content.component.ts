@@ -9,4 +9,6 @@ export class ContentComponent {
   @Input() title?: string;
   @Input() columns?: Array<Columns>;
   @Input() actions?: Array<Actions>;
+  @Input() data?: Array<any>;
+  @Input() loading?: boolean;
 }
